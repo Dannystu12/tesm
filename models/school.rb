@@ -32,7 +32,7 @@ class School
 
   def self.read_by_id id
     sql = "SELECT * FROM schools WHERE id = $1"
-    result = SqlRunner.run sql, [@id]
+    result = SqlRunner.run sql, [id]
     build_results(result).first
   end
 

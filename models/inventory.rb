@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner'
+require_relative 'item'
 
 class Inventory
   attr_reader :id
@@ -25,6 +26,10 @@ class Inventory
   def delete
     sql = "DELETE FROM inventory WHERE id = $1"
     SqlRunner.run sql, [@id]
+  end
+
+  def read_item
+    Item.read_by_id @item_id
   end
 
   def increase_qty amount

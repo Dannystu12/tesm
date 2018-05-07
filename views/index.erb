@@ -1,5 +1,12 @@
 <% @inventory.each{ |inv_item| %>
+  <% item = inv_item.read_item %>
+  <% school = item.read_school %>
   <div class="inventory-tile">
-    <p><%= inv_item.id  %></p>
+    <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
+    <p>Name: <%= item.name %></p>
+    <p>Description: <%= item.description %></p>
+    <p>Sell Price: <%= item.sell_price %></p>
+    <p>Quantity: <%= inv_item.quantity %></p>
+    <hr/>
   </div>
 <% } %>

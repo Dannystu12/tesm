@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner'
+require_relative 'school'
 
 class Item
   attr_reader :id
@@ -26,6 +27,10 @@ class Item
   def delete
     sql = "DELETE FROM items WHERE id = $1"
     SqlRunner.run sql, [@id]
+  end
+
+  def read_school
+    School.read_by_id @school_id
   end
 
   def self.read_by_id id
