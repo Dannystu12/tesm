@@ -14,6 +14,15 @@ class Item
     @supplier_id = options["supplier_id"].to_i
   end
 
+  def create
+    sql = "INSERT INTO
+    items(name, description, buy_price, sell_price, school_id, supplier_id)
+    VALUES($1, $2, $3, $4, $5, $6) RETURNING id"
+    values = [@name, @description, @buy_price, @sell_price, @school_id, @supplier_id]
+    result = SqlRunner.run sql, values
+    @id = result[0]["id"].to_i
+  end
+
   def self.delete_all
     sql = "DELETE FROM items"
     SqlRunner.run sql
