@@ -13,6 +13,9 @@ Supplier.delete_all
 ferise_varo = Supplier.new(UespScraper.scrape_supplier("http://en.uesp.net/wiki/Morrowind:Ferise_Varo"))
 ferise_varo.create
 
+orrent_geontene = Supplier.new(UespScraper.scrape_supplier("http://en.uesp.net/wiki/Morrowind:Orrent_Geontene"))
+orrent_geontene.create
+
 # destruction = School.new({
 #   "name" => "Destruction",
 #   "description" =>"The Destruction skill is the mastery of the spell effects of the College of Destruction. Their spells harm living and unliving things, and include elemental damage, draining, damaging, vulnerability, and disintegration magical effects.",

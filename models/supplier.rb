@@ -3,23 +3,26 @@ require_relative '../db/sql_runner'
 class Supplier
 
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :name, :location, :image_url
 
   def initialize options
     @id = options["id"].to_i if options["id"]
     @name = options["name"]
+    @location = options["location"]
+    @image_url = options["image_url"]
   end
 
   def create
-    sql = "INSERT INTO suppliers(name)
+    sql = "INSERT INTO suppliers(name, location, image_url)
     VALUES($1) RETURNING id"
-    result = SqlRunner.run sql, [@name]
+    result = SqlRunner.run sql, [@nam, @location, @image_url]
     @id = result[0]["id"].to_i
   end
 
   def update
-    sql = "UPDATE suppliers SET name = $1 WHERE id = $2"
-    SqlRunner.run sql, [@name, @id]
+    sql = "UPDATE suppliers SET(name, location, image_url)
+    = ($1, $2, $3) WHERE id = $4"
+    SqlRunner.run sql, [@name, @location, @image_url, @id]
   end
 
   def delete

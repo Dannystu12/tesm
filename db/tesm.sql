@@ -5,7 +5,9 @@ DROP TABLE IF EXISTS suppliers;
 
 CREATE TABLE suppliers(
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  image_url VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE schools(

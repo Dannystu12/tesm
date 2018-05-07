@@ -9,7 +9,11 @@ class UespScraper
     doc = get_doc url
     name = doc.css('#firstHeading').first.text
     name.slice!("Morrowind:")
-    {"name" => name}
+
+    location = doc.css('.wikitable tr td')[1].text
+
+    image_url = doc.css('div.thumbinner img').first['src']
+    {"name" => name, "location" => location, "image_url" => image_url}
   end
 
   def self.scrape_school url
