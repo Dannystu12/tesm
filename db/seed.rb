@@ -2,13 +2,15 @@ require_relative '../models/inventory'
 require_relative '../models/item'
 require_relative '../models/school'
 require_relative '../models/supplier'
+require_relative 'uesp_scraper'
 
 Inventory.delete_all
 Item.delete_all
 School.delete_all
 Supplier.delete_all
 
-ferise_varo = Supplier.new({"name" => "Ferise Varo"})
+# ferise_varo = Supplier.new({"name" => "Ferise Varo"})
+ferise_varo = Supplier.new(UespScraper.scrape_supplier("http://en.uesp.net/wiki/Morrowind:Ferise_Varo"))
 ferise_varo.create
 
 destruction = School.new({
