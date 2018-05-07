@@ -1,6 +1,8 @@
 <% @suppliers.each{ |supplier| %>
   <div class="supplier-tile">
+    <img src="<%= supplier.icon_url %>" alt="<%= supplier.name %> image">
     <p>Name: <%= supplier.name %></p>
+    <p>Location: <%= supplier.location %></p>
     <hr/>
   </div>
 <% } %>

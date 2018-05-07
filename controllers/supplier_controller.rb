@@ -19,6 +19,8 @@ end
 post '/edit-supplier/:id' do
   supplier = Supplier.read_by_id params["id"]
   supplier.name = params["name"]
+  supplier.location = params["location"]
+  supplier.image_url = params["image_url"]
   supplier.update
   redirect "/suppliers"
 end
