@@ -23,6 +23,35 @@ class Item
     @id = result[0]["id"].to_i
   end
 
+  def delete
+    sql = "DELETE FROM items WHERE id = $1"
+    SqlRunner.run sql, [@id]
+  end
+
+  def self.read_by_id id
+    sql = "SELECT * FROM items WHERE id = $1"
+    result = SqlRunner.run sql, [id]
+    build_results(result).first
+  end
+
+  def self.read_all
+    sql = "SELECT * FROM items"
+    results = SqlRunner.run sql
+    build_results results
+  end
+
+  def self.read_by_school school
+    sql = "SELECT * FROM items WHERE school_id = $1"
+    results = SqlRunner.run sql, [school.id]
+    build_results(results)
+  end
+
+  def self.read_by_supplier supplier
+    sql = "SELECT * FROM items WHERE supplier_id = $1"
+    results = SqlRunner.run sql, [supplier.id]
+    build_results(results)
+  end
+
   def self.delete_all
     sql = "DELETE FROM items"
     SqlRunner.run sql
