@@ -14,8 +14,8 @@ class Supplier
 
   def create
     sql = "INSERT INTO suppliers(name, location, image_url)
-    VALUES($1) RETURNING id"
-    result = SqlRunner.run sql, [@nam, @location, @image_url]
+    VALUES($1, $2, $3) RETURNING id"
+    result = SqlRunner.run sql, [@name, @location, @image_url]
     @id = result[0]["id"].to_i
   end
 
