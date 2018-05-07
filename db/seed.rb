@@ -4,6 +4,7 @@ require_relative '../models/school'
 require_relative '../models/supplier'
 require_relative 'uesp_scraper'
 
+
 Inventory.delete_all
 Item.delete_all
 School.delete_all
@@ -23,22 +24,39 @@ orrent_geontene.create
 #   })
 # destruction = School.new(UespScraper.scrape_school("http://en.uesp.net/wiki/Morrowind:Destruction"))
 # destruction.create
+
 schools = UespScraper.scrape_schools().map{|hash| School.new(hash)}
 schools.map{|school| school.create}
 
+spell_hashes = UespScraper.scrape_spells 'http://en.uesp.net/wiki/Morrowind:Ferise_Varo'
 
-fireball = Item.new({
-  "name" => "Fireball",
-  "description" => "Fire Damage – 2–20 points instantly in a 5-foot radius on target.",
-  "buy_price" => "2",
-  "sell_price" => "5",
-  "school_id" => schools.select{|school| school.name == "Destruction"}[0].id,
-  "supplier_id" => ferise_varo.id
-  })
-fireball.create
+spell_hashes.each{ |spell_hash|
+  spell_hash["school_id"] = schools.select{|school| school.name == spell_hash["school"]}[0].id
+  spell_hash["supplier_id"] = ferise_varo.id
+  spell_hash["buy_price"] = spell_hash["sell_price"] / 2
 
-fireball_inventory = Inventory.new({
-  "item_id" => fireball.id,
-  "quantity" => "3"
-  })
-fireball_inventory.create
+  item = Item.new spell_hash
+  item.create
+  Inventory.new({
+    "item_id" => item.id,
+    "quantity" => rand(10)
+    }).create
+}
+
+#
+#
+# fireball = Item.new({
+#   "name" => "Fireball",
+#   "description" => "Fire Damage – 2–20 points instantly in a 5-foot radius on target.",
+#   "buy_price" => "2",
+#   "sell_price" => "5",
+#   "school_id" => schools.select{|school| school.name == "Destruction"}[0].id,
+#   "supplier_id" => ferise_varo.id
+#   })
+# fireball.create
+#
+# fireball_inventory = Inventory.new({
+#   "item_id" => fireball.id,
+#   "quantity" => "3"
+#   })
+# fireball_inventory.create

@@ -42,6 +42,32 @@ class UespScraper
     result
   end
 
+  def self.scrape_spells url
+    doc = get_doc url
+    spell_table = doc.search('table.wikitable').last
+    cells = []
+    spell_table.search('tr').each {|tr|
+      cells.push(tr.search('th, td'))
+    }
+    #remove header cells
+    cells.shift 1
+    school = ""
+    results = []
+
+    cells.each{ |cell|
+      if cell.attr('colspan')
+        school = cell.text
+        next
+      end
+
+      name = cell.children[0].text
+      cost = cell.children[1].text.to_i
+      desc = cell.children[4].text + cell.children[5].text
+      results.push({"school" => school, "name" => name, "sell_price" => cost, "description" => desc})
+    }
+    results
+  end
+
   private
   def self.get_doc url
     html = open(url)
