@@ -1,14 +1,30 @@
-<form action="/add-school" method="post">
-  <label for="icon-url">Icon URL:</label>
-  <input type="text" name="icon_url" id="icon-url">
+<form action="/add-item" method="post">
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name">
 
   <label for="description">Description:</label>
   <textarea name="description" id="description"></textarea>
 
-  <label for="buy-price">Icon URL:</label>
-  <input type="text" name="icon_url" id="buy-price">
+  <label for="buy-price">Buy Price:</label>
+  <input type="number" name="buy_price" id="buy-price" min="0">
 
+  <label for="sell-price">Sell Price:</label>
+  <input type="number" name="sell_price" id="sell-price" min="0">
 
+  <label for="school">School:</label>
+  <select name="school_id">
+    <% @schools.each{ |school| %>
+    <option value="<%= school.id %>"><%= school.name %></option>
+    <% } %>
+  </select>
 
-  <input type="submit" value="Create School">
+  <label for="supplier">Supplier:</label>
+  <select name="supplier_id">
+    <% @suppliers.each{ |supplier| %>
+    <option value="<%= supplier.id %>"><%= supplier.name %></option>
+    <% } %>
+  </select>
+
+  <input type="submit" value="Create Item">
 </form>
