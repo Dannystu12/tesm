@@ -1,0 +1,12 @@
+<form action="/edit-school/<%= @school.id  %>" method="post">
+  <label for="icon-url">Icon URL:</label>
+  <input type="text" name="icon_url" id="icon-url" value="<%= @school.icon_url  %>">
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="<%= @school.name  %>">
+
+  <label for="description">Description:</label>
+  <textarea name="description" id="description"><%= @school.description  %></textarea>
+
+  <input type="submit" value="Update">
+</form>

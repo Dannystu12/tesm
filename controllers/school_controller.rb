@@ -15,3 +15,17 @@ post '/add-school' do
   School.new(params).create
   redirect '/schools'
 end
+
+get '/edit-school/:id' do
+  @school = School.read_by_id params["id"]
+  erb :"schools/edit_school"
+end
+
+post '/edit-school/:id' do
+  school = School.read_by_id params["id"]
+  school.name = params["name"]
+  school.icon_url = params["icon_url"]
+  school.description = params["description"]
+  school.update
+  redirect "/schools"
+end
