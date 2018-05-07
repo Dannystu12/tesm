@@ -17,6 +17,28 @@ class Supplier
     @id = result[0]["id"].to_i
   end
 
+  def update
+    sql = "UPDATE suppliers SET name = $1"
+    SqlRunner.run sql, [@name]
+  end
+
+  def delete
+    sql = "DELETE FROM suppliers WHERE id = $1"
+    SqlRunner.run sql, [@id]
+  end
+
+  def self.read_by_id id
+    sql = "SELECT * FROM suppliers WHERE id = $1"
+    result = SqlRunner.run sql, [id]
+    build_results(result).first
+  end
+
+  def self.read_all
+    sql = "SELECT * FROM suppliers"
+    results = SqlRunner.run sql
+    build_results(results)
+  end
+
   def self.delete_all
     sql = "DELETE FROM suppliers"
     SqlRunner.run sql

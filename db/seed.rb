@@ -23,12 +23,13 @@ ferise_varo.create
 schools = UespScraper.scrape_schools().map{|hash| School.new(hash)}
 schools.map{|school| school.create}
 
+
 fireball = Item.new({
   "name" => "Fireball",
   "description" => "Fire Damage – 2–20 points instantly in a 5-foot radius on target.",
   "buy_price" => "2",
   "sell_price" => "5",
-  "school_id" => schools[0].id,
+  "school_id" => schools.select{|school| school.name == "Destruction"}[0].id,
   "supplier_id" => ferise_varo.id
   })
 fireball.create
