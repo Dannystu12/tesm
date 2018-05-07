@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="/styles/style.css">
   </head>
   <body>
-    <%= yield %>
+    <div class="nav-wrapper">
+      <nav class="nav-panel">
+        <ul>
+          <li><img src="/images/main_logo.png" class="logo" alt="TESM logo"></li>
+          <li><a href="/">
+            <img src="/images/home_icon.png" class="icon" alt="home logo">
+          </a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <%= yield %>
+    </div>
   </body>
 </html>

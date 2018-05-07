@@ -1,0 +1,40 @@
+/* *{
+  padding: 0px;
+  margin: 0px;
+}
+
+ul{
+  list-style-type: none;
+}
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-wrapper {
+  width: 30%;
+}
+
+.logo{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.nav-panel{
+  background-color: #C7AD7D;
+  position: fixed;
+  justify-content: center;
+  height: 100%;
+  padding: 1%
+}
+
+.nav-panel > ul > li{
+  display: flex;
+  justify-content: center;
+}
+
+.main-content{
+  padding: 1%;
+  width: 70%;
+} */
