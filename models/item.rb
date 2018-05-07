@@ -24,6 +24,14 @@ class Item
     @id = result[0]["id"].to_i
   end
 
+  def update
+    sql = "UPDATE items
+    SET(name, description, buy_price, sell_price, school_id, supplier_id)
+    = ($1, $2, $3, $4, $5, $6) WHERE id = $7"
+    values = [@name, @description, @buy_price, @sell_price, @school_id, @supplier_id, @id]
+    SqlRunner.run sql, values
+  end
+
   def delete
     sql = "DELETE FROM items WHERE id = $1"
     SqlRunner.run sql, [@id]
