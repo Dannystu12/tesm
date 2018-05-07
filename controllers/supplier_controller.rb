@@ -27,3 +27,9 @@ post '/add-supplier' do
   Supplier.new(params).create
   redirect "/suppliers"
 end
+
+post '/delete-supplier/:id' do
+  supplier = Supplier.read_by_id params["id"]
+  supplier.delete
+  redirect '/suppliers'
+end

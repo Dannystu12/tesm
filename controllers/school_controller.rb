@@ -29,3 +29,9 @@ post '/edit-school/:id' do
   school.update
   redirect "/schools"
 end
+
+post '/delete-school/:id' do
+  school = School.read_by_id params["id"]
+  school.delete
+  redirect "/schools"
+end

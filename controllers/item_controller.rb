@@ -41,3 +41,11 @@ post '/edit-item/:id' do
   inventory.update
   redirect "/"
 end
+
+post '/delete-item/:id' do
+  item = Item.read_by_id params["id"]
+  inventory = Inventory.read_by_item item
+  inventory.delete
+  item.delete
+  redirect "/"
+end
