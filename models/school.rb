@@ -19,6 +19,29 @@ class School
     @id = result[0]["id"].to_i
   end
 
+  def update
+    sql = "UPDATE schools SET(name, description, icon_url) = ($1, $2, $3)
+    WHERE id = $4"
+    SqlRunner.run sql, [@name, @description, @icon_url, @id]
+  end
+
+  def delete
+    sql = "DELETE FROM schools WHERE id = $1"
+    SqlRunner.run sql, [@id]
+  end
+
+  def self.read_by_id id
+    sql = "SELECT * FROM schools WHERE id = $1"
+    result = SqlRunner.run sql, [@id]
+    build_results(result).first
+  end
+
+  def self.read_all
+    sql = "SELECT * FROM schools"
+    results = SqlRunner.run sql
+    build_results(results)
+  end
+
   def self.delete_all
     sql = "DELETE FROM schools"
     SqlRunner.run sql

@@ -18,8 +18,8 @@ class Supplier
   end
 
   def update
-    sql = "UPDATE suppliers SET name = $1"
-    SqlRunner.run sql, [@name]
+    sql = "UPDATE suppliers SET name = $1 WHERE id = $2"
+    SqlRunner.run sql, [@name, @id]
   end
 
   def delete

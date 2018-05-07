@@ -38,7 +38,6 @@ class UespScraper
     result
   end
 
-
   private
   def self.get_doc url
     html = open(url)
