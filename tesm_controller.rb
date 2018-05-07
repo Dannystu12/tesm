@@ -15,6 +15,11 @@ get '/suppliers' do
   erb :supplier_index
 end
 
+get '/schools' do
+  @schools = School.read_all
+  erb :school_index
+end
+
 get '/add-supplier' do
   erb :add_supplier
 end
@@ -22,4 +27,13 @@ end
 post '/add-supplier' do
   Supplier.new(params).create
   redirect "/suppliers"
+end
+
+get '/add-school' do
+  erb :add_school
+end
+
+post '/add-school' do
+  School.new(params).create
+  redirect '/schools'
 end
