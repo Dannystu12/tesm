@@ -1,10 +1,13 @@
 <% @schools.each{ |school| %>
   <div class="school-tile">
     <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
-
-    <h2>Name: <%= school.name %></h2>
-    
+    <a href="/edit-school/<%= school.id %>">
+      <h2>Name: <%= school.name %></h2>
+    </a>
     <p>Description: <%= school.description %></p>
+    <form action="/delete-school/<%= school.id %>" method="post">
+      <input type="submit" value="" style="background:url(images/delete_icon.png) no-repeat;" />
+    </form>
     <hr/>
   </div>
 <% } %>
