@@ -2,15 +2,45 @@
   <% item = inv_item.read_item %>
   <% school = item.read_school %>
   <div class="inventory-card">
-    <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
-    <a href="/edit-item/<%= item.id %>">
-      <h2>Name: <%= item.name %></h2>
-    </a>
-    <p>Description: <%= item.description %></p>
-    <p>Sell Price: <%= item.sell_price %></p>
-    <p>Quantity: <%= inv_item.quantity %></p>
-    <form action="/delete-item/<%= item.id %>" method="post">
-      <input type="submit" value="" style="background:url(images/delete_icon.png) no-repeat;" />
-    </form>
+    <table>
+      <form action="/delete-item/<%= item.id %>" method="post">
+        <input alt="Search Button" src="/images/delete.svg" type="image" class="delete-btn"/>
+      </form>
+      <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
+      <tr>
+        <td colspan="2" >
+          <a href="/edit-item/<%= item.id %>">
+            <h2 class="title"><%= item.name %></h2>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p> <%= item.description %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          </br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Sell Price:</p>
+        </td>
+        <td>
+          <p><%= item.sell_price %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Quantity: </p>
+        </td>
+        <td>
+          <p><%= inv_item.quantity %></p>
+        </td>
+      </tr>
+      <tr>
+    </table>
   </div>
 <% } %>
