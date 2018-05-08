@@ -1,0 +1,46 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face {
+font-family: "Abaddon";
+src: url("fonts/abaddon.ttf") format("ttf");
+}
+
+@font-face {
+font-family: "Cyrodiil";
+src: url("fonts/Cyrodiil.otf") format("otf");
+}
+
+h2, a{
+  font-family: Abaddon;
+}
+
+p{
+  font-family: Cyrodiil;
+}
+
+
+/* main navigation sidebar */
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  padding: 1%;
+  background-color: #08080A;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+main{
+  margin-left: 22%;
+}
+
+textarea {
+    resize: none;
+}

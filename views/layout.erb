@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>TESM</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
     <link rel="icon" href="/images/favicon.png" />
-    <link rel="stylesheet" href="/styles/style.css">
   </head>
   <body>
-    <div class="nav-wrapper">
-      <nav class="nav-panel">
+      <nav class="sidenav">
         <ul>
           <li>
             <a href="/">
@@ -17,46 +16,45 @@
             </li>
           <li>
             <a href="/">
-              <img src="/images/home_icon.png" class="icon" alt="home logo">
+              <img src="/images/home_icon.png" alt="home logo">
               Home
             </a>
           </li>
           <li>
             <a href="/add-item">
-              <img src="/images/home_icon.png" class="icon" alt="add item icon">
+              <img src="/images/home_icon.png" alt="add item icon">
               Add Item
             </a>
           </li>
           <li>
             <a href="/suppliers">
-              <img src="/images/home_icon.png" class="icon" alt="view suppliers icon">
+              <img src="/images/home_icon.png" alt="view suppliers icon">
               Suppliers
             </a>
           </li>
           <li>
             <a href="/add-supplier">
-              <img src="/images/home_icon.png" class="icon" alt="add supplier icon">
+              <img src="/images/home_icon.png" alt="add supplier icon">
               Add Supplier
             </a>
           </li>
           <li>
             <a href="/schools">
-              <img src="/images/home_icon.png" class="icon" alt="view schools icon">
+              <img src="/images/home_icon.png" alt="view schools icon">
               Schools
             </a>
           </li>
           <li>
             <a href="/add-school">
-              <img src="/images/home_icon.png" class="icon" alt="add school icon">
+              <img src="/images/home_icon.png" alt="add school icon">
               Add School
             </a>
           </li>
         </ul>
       </nav>
-    </div>
 
-    <div class="main-content">
+    <main>
       <%= yield %>
-    </div>
+    </main>
   </body>
 </html>
