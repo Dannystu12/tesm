@@ -27,8 +27,16 @@ p{
   height: 100%;
   width: 20%;
   position: fixed;
-  padding: 1%;
+  padding: 2%;
   background-color: #08080A;
+}
+
+.sidenav ul {
+  height:90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 1%;
 }
 
 .logo {
@@ -38,7 +46,33 @@ p{
 }
 
 main{
-  margin-left: 22%;
+  margin-left: 24%;
+}
+
+figure.nav-icon p {
+  font-family: Abaddon;
+  margin-top: 1%;
+}
+
+figure.nav-icon img{
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.nav-link  {
+  color: #F3E0A0;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #E8D658;
+  text-decoration: none;
+}
+
+figure.nav-icon {
+  text-align: center;
+  overflow: hidden;
 }
 
 textarea {
