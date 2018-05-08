@@ -21,6 +21,9 @@ p{
   font-family: Cyrodiil;
 }
 
+body{
+  background-color: #fff6db;
+}
 
 /* main navigation sidebar */
 .sidenav {
@@ -47,6 +50,10 @@ p{
 
 main{
   margin-left: 24%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff6db;
 }
 
 figure.nav-icon p {
@@ -77,4 +84,20 @@ figure.nav-icon {
 
 textarea {
     resize: none;
+}
+
+/* Create cards for inventory*/
+.inventory-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20%;
+  margin:3%;
+  padding:3%;
+  background-color: #F3E0A0;
+}
+
+
+
+.inventory-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }

@@ -1,5 +1,5 @@
 <% @schools.each{ |school| %>
-  <div class="school-tile">
+  <div class="school-card">
     <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
     <a href="/edit-school/<%= school.id %>">
       <h2>Name: <%= school.name %></h2>
@@ -8,6 +8,5 @@
     <form action="/delete-school/<%= school.id %>" method="post">
       <input type="submit" value="" style="background:url(images/delete_icon.png) no-repeat;" />
     </form>
-    <hr/>
   </div>
 <% } %>

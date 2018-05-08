@@ -1,5 +1,5 @@
 <% @suppliers.each{ |supplier| %>
-  <div class="supplier-tile">
+  <div class="supplier-card">
     <img src="<%= supplier.image_url %>" alt="<%= supplier.name %> image">
     <a href="/edit-supplier/<%= supplier.id %>">
       <h2>Name: <%= supplier.name %></h2>

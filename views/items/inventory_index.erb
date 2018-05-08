@@ -1,7 +1,7 @@
 <% @inventory.each{ |inv_item| %>
   <% item = inv_item.read_item %>
   <% school = item.read_school %>
-  <div class="inventory-tile">
+  <div class="inventory-card">
     <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
     <a href="/edit-item/<%= item.id %>">
       <h2>Name: <%= item.name %></h2>
@@ -12,6 +12,5 @@
     <form action="/delete-item/<%= item.id %>" method="post">
       <input type="submit" value="" style="background:url(images/delete_icon.png) no-repeat;" />
     </form>
-    <hr/>
   </div>
 <% } %>
