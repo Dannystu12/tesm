@@ -1,8 +1,13 @@
 <% @suppliers.each{ |supplier| %>
   <div class="supplier-tile">
     <img src="<%= supplier.image_url %>" alt="<%= supplier.name %> image">
-    <p>Name: <%= supplier.name %></p>
+    <a href="/edit-supplier/<%= supplier.id %>">
+      <h2>Name: <%= supplier.name %></h2>
+    </a>
     <p>Location: <%= supplier.location %></p>
+    <form action="/delete-supplier/<%= supplier.id %>" method="post">
+      <input type="submit" value="" style="background:url(images/delete_icon.png) no-repeat;" />
+    </form>
     <hr/>
   </div>
 <% } %>

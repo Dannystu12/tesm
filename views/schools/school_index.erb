@@ -1,7 +1,9 @@
 <% @schools.each{ |school| %>
   <div class="school-tile">
     <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
-    <p>Name: <%= school.name %></p>
+
+    <h2>Name: <%= school.name %></h2>
+    
     <p>Description: <%= school.description %></p>
     <hr/>
   </div>
