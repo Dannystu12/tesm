@@ -18,7 +18,7 @@ h2, a, label{
   color: #512e13;
 }
 
-p, input, select{
+p, input, select, textarea{
   font-family: Cyrodiil;
   color: #512e13;
 }
@@ -27,7 +27,7 @@ body{
   background-color: #fff6db;
 }
 
-a{
+a.title{
   color: #2c8ecc;
 }
 
@@ -148,3 +148,34 @@ td{
 }
 
 /* Form styling */
+td.btn {
+  text-align: center;
+}
+
+td.btn input {
+  width: 20%;
+}
+
+form td{
+  padding-top: 1%;
+}
+
+form {
+  margin: 2%;
+  padding: 2%;
+  background-color: #F3E0A0;
+  border-radius: 2%;
+}
+
+.form-title{
+  text-align: center;
+}
+
+input[type=number], input[type=text]{
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+textarea{
+  padding: 1%;
+}
