@@ -1,12 +1,28 @@
 <form action="/add-school" method="post">
-  <label for="icon-url">Icon URL:</label>
-  <input type="text" name="icon_url" id="icon-url">
 
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name">
+  <table>
+    <tr>
+      <td colspan="2" class="form-title"><h2>Add School</h2></td>
+    </tr>
 
-  <label for="description">Description:</label>
-  <textarea name="description" id="description" rows="10" cols="75"></textarea>
+    <tr>
+      <td><label for="icon-url">Icon URL:</label></td>
+      <td><input type="text" name="icon_url" id="icon-url"></td>
+    </tr>
 
-  <input type="submit" value="Create">
+    <tr>
+      <td><label for="name">Name:</label></td>
+      <td><input type="text" name="name" id="name"></td>
+    </tr>
+
+    <tr>
+      <td><label for="description">Description:</label></td>
+      <td><textarea name="description" id="description" rows="10" cols="75"></textarea></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="btn"><input type="submit" value="Create"></td>
+    </tr>
+  </table>
+
 </form>
