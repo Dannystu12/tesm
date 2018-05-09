@@ -49,7 +49,7 @@ class Inventory
   end
 
   def self.read_all
-    sql = "SELECT * FROM inventory"
+    sql = "SELECT * FROM inventory ORDER BY quantity ASC"
     results = SqlRunner.run sql
     build_results results
   end
