@@ -13,6 +13,10 @@ font-family: "Cyrodiil";
 src: url("fonts/Cyrodiil.otf") format("otf");
 }
 
+a{
+  text-decoration: none;
+}
+
 h2, a, label{
   font-family: Abaddon;
   color: #512e13;
@@ -27,9 +31,7 @@ body{
   background-color: #fff6db;
 }
 
-a.title{
-  color: #2c8ecc;
-}
+
 
 /* main navigation sidebar */
 
@@ -119,6 +121,14 @@ textarea {
   color: #512e13;
   display: flex;
   flex-direction: column;
+}
+.card a h2{
+  color: #2c8ecc;
+}
+
+.card a:hover{
+  text-decoration: underline;
+  color: #2c8ecc;
 }
 
 .card img{
