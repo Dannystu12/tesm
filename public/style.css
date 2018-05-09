@@ -13,8 +13,9 @@ font-family: "Cyrodiil";
 src: url("fonts/Cyrodiil.otf") format("otf");
 }
 
-h2, a{
+h2, a, label{
   font-family: Abaddon;
+  color: #512e13;
 }
 
 p{
@@ -91,7 +92,7 @@ textarea {
     resize: none;
 }
 
-/* Create cards for inventory*/
+/* Create cards for display items*/
 .card {
   border-radius: 2%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -133,3 +134,5 @@ td{
   vertical-align: top;
   text-align: left;
 }
+
+/* Form styling */
