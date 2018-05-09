@@ -3,7 +3,9 @@
     <form action="/delete-supplier/<%= supplier.id %>" method="post">
       <input alt="Search Button" src="/images/delete.svg" type="image" class="delete-btn"/>
     </form>
-    <img src="<%= supplier.image_url %>" alt="<%= supplier.name %> image">
+    <a href="/items-by-supplier/<%= supplier.id %>">
+      <img src="<%= supplier.image_url %>" alt="<%= supplier.name %> image">
+    </a>
     <a href="/edit-supplier/<%= supplier.id %>">
       <h2><%= supplier.name %></h2>
     </a>

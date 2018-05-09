@@ -54,3 +54,8 @@ get '/items-by-school/:id' do
   @inventory = Inventory.read_by_school params["id"]
   erb :"items/inventory_index"
 end
+
+get '/items-by-supplier/:id' do
+  @inventory = Inventory.read_by_supplier params["id"]
+  erb :"items/inventory_index"
+end

@@ -3,8 +3,9 @@
     <form action="/delete-school/<%= school.id %>" method="post">
       <input alt="Search Button" src="/images/delete.svg" type="image" class="delete-btn"/>
     </form>
-
-    <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
+    <a href="/items-by-school/<%= school.id %>">
+      <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
+    </a>
     <a href="/edit-school/<%= school.id %>">
       <h2><%= school.name %></h2>
     </a>
