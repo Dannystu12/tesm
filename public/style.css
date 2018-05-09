@@ -138,6 +138,11 @@ textarea {
 
 .card h2{
   font-size: 1.25em;
+  max-height: 2.5em;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
 }
 
 
@@ -155,6 +160,11 @@ textarea {
 td{
   vertical-align: top;
   text-align: left;
+}
+
+.card table{
+  table-layout: fixed;
+  width: 100%;
 }
 
 /* Form styling */
