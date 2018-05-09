@@ -18,8 +18,9 @@ h2, a, label{
   color: #512e13;
 }
 
-p{
+p, input, select{
   font-family: Cyrodiil;
+  color: #512e13;
 }
 
 body{
@@ -30,8 +31,9 @@ a{
   color: #2c8ecc;
 }
 
-
 /* main navigation sidebar */
+
+
 .sidenav {
   height: 100%;
   width: 20%;
@@ -48,10 +50,28 @@ a{
   margin-bottom: 1%;
 }
 
+
 .logo {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.nav-link{
+  text-decoration: none;
+}
+
+.nav-link:hover{
+  text-decoration: none;
+}
+
+
+.nav-link  p{
+  color: #F3E0A0;
+}
+
+.nav-link p:hover {
+  color: #E8D658;
 }
 
 main{
@@ -73,15 +93,7 @@ figure.nav-icon img{
   object-fit: contain;
 }
 
-.nav-link  {
-  color: #F3E0A0;
-  text-decoration: none;
-}
 
-.nav-link:hover {
-  color: #E8D658;
-  text-decoration: none;
-}
 
 figure.nav-icon {
   text-align: center;
