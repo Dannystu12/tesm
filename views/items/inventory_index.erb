@@ -1,7 +1,7 @@
 <% @inventory.each{ |inv_item| %>
   <% item = inv_item.read_item %>
   <% school = item.read_school %>
-  <div class="inventory-card">
+  <div class="card">
     <table>
       <form action="/delete-item/<%= item.id %>" method="post">
         <input alt="Search Button" src="/images/delete.svg" type="image" class="delete-btn"/>
