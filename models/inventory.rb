@@ -58,6 +58,16 @@ class Inventory
     build_results(result).first
   end
 
+  def self.read_by_school id
+    sql = "SELECT inventory.*
+    FROM inventory INNER JOIN items ON inventory.item_id = items.id
+    INNER JOIN schools ON items.school_id = schools.id
+    WHERE schools.id = $1
+    ORDER BY inventory.quantity ASC"
+    results = SqlRunner.run sql, [id]
+    build_results results
+  end
+
   def self.read_all
     sql = "SELECT * FROM inventory ORDER BY quantity ASC"
     results = SqlRunner.run sql

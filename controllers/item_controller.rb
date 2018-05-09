@@ -49,3 +49,8 @@ post '/delete-item/:id' do
   item.delete
   redirect "/"
 end
+
+get '/items-by-school/:id' do
+  @inventory = Inventory.read_by_school params["id"]
+  erb :"items/inventory_index"
+end

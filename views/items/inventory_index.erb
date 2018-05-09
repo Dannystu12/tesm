@@ -6,7 +6,9 @@
       <form action="/delete-item/<%= item.id %>" method="post">
         <input alt="Search Button" src="/images/delete.svg" type="image" class="delete-btn"/>
       </form>
-      <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
+      <a href="/items-by-school/<%= school.id %>">
+        <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
+      </a>
       <tr>
         <td colspan="2" >
           <a href="/edit-item/<%= item.id %>">
