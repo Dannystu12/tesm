@@ -1,12 +1,27 @@
 <form action="/edit-supplier/<%= @supplier.id  %>" method="post">
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name" value="<%= @supplier.name  %>">
 
-  <label for="location">Location:</label>
-  <input type="text" name="location" id="location" value="<%= @supplier.location  %>">
+  <table>
+    <tr>
+      <td colspan="2" class="title"><h2>Edit Supplier</h2></td>
+    </tr>
 
-  <label for="image-url">Image URL:</label>
-  <input type="text" name="image_url" id="image-url" value="<%= @supplier.image_url %>">
+    <tr>
+      <td><label for="name">Name:</label></td>
+      <td><input type="text" name="name" id="name" value="<%= @supplier.name  %>"></td>
+    </tr>
 
-  <input type="submit" value="Update">
+    <tr>
+      <td><label for="location">Location:</label></td>
+      <td><input type="text" name="location" id="location" value="<%= @supplier.location  %>"></td>
+    </tr>
+
+    <tr>
+      <td><label for="image-url">Image URL:</label></td>
+      <td><input type="text" name="image_url" id="image-url" value="<%= @supplier.image_url %>"></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="btn"><input type="submit" value="Update"></td>
+    </tr>
+  </table>
 </form>

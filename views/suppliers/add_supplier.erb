@@ -1,12 +1,27 @@
 <form action="/add-supplier" method="post">
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name">
+  <table>
+    <tr>
+      <td colspan="2" class="title"><h2>Add Supplier</h2></td>
+    </tr>
 
-  <label for="location">Location:</label>
-  <input type="text" name="location" id="location">
+    <tr>
+      <td><label for="name">Name:</label></td>
+      <td><input type="text" name="name" id="name"></td>
+    </tr>
 
-  <label for="image-url">Image URL:</label>
-  <input type="text" name="image_url" id="image-url">
+    <tr>
+      <td><label for="location">Location:</label></td>
+      <td><input type="text" name="location" id="location"></td>
+    </tr>
 
-  <input type="submit" value="Create">
+    <tr>
+      <td><label for="image-url">Image URL:</label></td>
+      <td><input type="text" name="image_url" id="image-url"></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="btn"><input type="submit" value="Create"></td>
+    </tr>
+  </table>
+
 </form>
