@@ -5,6 +5,8 @@ class Inventory
   attr_reader :id
   attr_accessor :item_id, :quantity
 
+  LOW_STOCK = 3
+
   def initialize options
     @id = options["id"].to_i if options["id"]
     @item_id = options["item_id"].to_i
@@ -40,6 +42,14 @@ class Inventory
   def decrease_qty amount
     return unless amount >= 0
     @quantity -= amount
+  end
+
+  def low_stock?
+    @quantity <= LOW_STOCK
+  end
+
+  def out_of_stock?
+    @quantity <= 0
   end
 
   def self.read_by_item item

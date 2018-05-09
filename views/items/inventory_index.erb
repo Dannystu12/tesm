@@ -34,10 +34,13 @@
       </tr>
       <tr>
         <td>
-          <p>Quantity: </p>
+          <% stock_indicator = ""  %>
+          <% stock_indicator = "low-stock"  if inv_item.low_stock? %>
+          <% stock_indicator = "out-of-stock"  if inv_item.out_of_stock? %>
+          <p class="<%= stock_indicator %>">Quantity: </p>
         </td>
         <td>
-          <p><%= inv_item.quantity %></p>
+          <p class="<%= stock_indicator %>"><%= inv_item.quantity %></p>
         </td>
       </tr>
       <tr>

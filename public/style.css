@@ -189,3 +189,12 @@ input[type=number], input[type=text]{
 textarea{
   padding: 1%;
 }
+
+/* formatting for low stock and out of stock */
+p.low-stock{
+  color: DarkOrange;
+}
+
+p.out-of-stock{
+  color: FireBrick;
+}
