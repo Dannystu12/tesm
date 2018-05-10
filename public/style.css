@@ -156,6 +156,14 @@ textarea {
   align-self: flex-start;
 }
 
+td.stock, td.price {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* hide add and minus icons for price to keep alignmen */
+
 /* align text in tables to tob left */
 td{
   vertical-align: top;

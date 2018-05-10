@@ -4,7 +4,7 @@
   <div class="card">
     <table>
       <form action="/delete-item/<%= item.id %>" method="post">
-        <input alt="Search Button" src="/images/delete.svg" type="image" class="delete-btn"/>
+        <input alt="Delete Button" src="/images/delete.svg" type="image" class="delete-btn"/>
       </form>
       <a href="/items-by-school/<%= school.id %>">
         <img src="<%= school.icon_url %>" alt="<%= school.name %> icon">
@@ -30,7 +30,7 @@
         <td>
           <p>Sell Price:</p>
         </td>
-        <td>
+        <td class="price">
           <p><%= item.sell_price %></p>
         </td>
       </tr>
@@ -41,8 +41,14 @@
           <% stock_indicator = "out-of-stock"  if inv_item.out_of_stock? %>
           <p class="<%= stock_indicator %>">Quantity: </p>
         </td>
-        <td>
+        <td class="stock">
+          <form action="/item-minus-stock/<%= item.id %>" method="post">
+            <input alt="Minus Stock Button" src="/images/stock_minus.svg" type="image"/>
+          </form>
           <p class="<%= stock_indicator %>"><%= inv_item.quantity %></p>
+          <form action="/item-plus-stock/<%= item.id %>" method="post">
+            <input alt="Add Stock Button" src="/images/stock_plus.svg" type="image"/>
+          </form>
         </td>
       </tr>
       <tr>

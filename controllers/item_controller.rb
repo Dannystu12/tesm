@@ -59,3 +59,19 @@ get '/items-by-supplier/:id' do
   @inventory = Inventory.read_by_supplier params["id"]
   erb :"items/inventory_index"
 end
+
+post '/item-plus-stock/:id' do
+  item = Item.read_by_id params["id"]
+  inventory = Inventory.read_by_item item
+  inventory.increase_qty 1
+  inventory.update
+  redirect "/"
+end
+
+post '/item-minus-stock/:id' do
+  item = Item.read_by_id params["id"]
+  inventory = Inventory.read_by_item item
+  inventory.decrease_qty 1
+  inventory.update
+  redirect "/"
+end

@@ -41,6 +41,7 @@ class Inventory
 
   def decrease_qty amount
     return unless amount >= 0
+    return unless @quantity - amount>= 0
     @quantity -= amount
   end
 
