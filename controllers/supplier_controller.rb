@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/contrib/all' if development?
 require_relative '../models/supplier'
+require_relative '../models/uesp_scraper'
 
 get '/suppliers' do
   @suppliers = Supplier.read_all
@@ -34,4 +35,11 @@ post '/delete-supplier/:id' do
   supplier = Supplier.read_by_id params["id"]
   supplier.delete
   redirect '/suppliers'
+end
+
+post '/add-supplier-uesp' do
+  supplier_hash = UespScraper.scrape_supplier params["uesp_url"]
+  supplier = Supplier.new supplier_hash
+  supplier.create
+  redirect "/suppliers"
 end

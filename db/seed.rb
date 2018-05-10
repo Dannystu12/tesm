@@ -2,7 +2,7 @@ require_relative '../models/inventory'
 require_relative '../models/item'
 require_relative '../models/school'
 require_relative '../models/supplier'
-require_relative 'uesp_scraper'
+require_relative '../models/uesp_scraper'
 
 
 Inventory.delete_all

@@ -35,7 +35,6 @@ body{
 
 /* main navigation sidebar */
 
-
 .sidenav {
   height: 100%;
   width: 20%;
@@ -162,8 +161,6 @@ td.stock, td.price {
 }
 
 
-/* hide add and minus icons for price to keep alignmen */
-
 /* align text in tables to tob left */
 td{
   vertical-align: top;
@@ -193,6 +190,11 @@ form {
   padding: 2%;
   background-color: #F3E0A0;
   border-radius: 2%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-title{

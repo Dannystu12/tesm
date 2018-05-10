@@ -1,27 +1,44 @@
-<form action="/add-supplier" method="post">
-  <table>
-    <tr>
-      <td colspan="2" class="title"><h2>Add Supplier</h2></td>
-    </tr>
+<div class="form-container">
 
-    <tr>
-      <td><label for="name">Name:</label></td>
-      <td><input type="text" name="name" id="name"></td>
-    </tr>
+  <form action="/add-supplier" method="post">
+      <table>
+        <tr>
+          <td colspan="2" class="title"><h2>Add Supplier</h2></td>
+        </tr>
 
-    <tr>
-      <td><label for="location">Location:</label></td>
-      <td><input type="text" name="location" id="location"></td>
-    </tr>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" name="name" id="name"></td>
+        </tr>
 
-    <tr>
-      <td><label for="image-url">Image URL:</label></td>
-      <td><input type="text" name="image_url" id="image-url"></td>
-    </tr>
+        <tr>
+          <td><label for="location">Location:</label></td>
+          <td><input type="text" name="location" id="location"></td>
+        </tr>
 
-    <tr>
-      <td colspan="2" class="btn"><input type="submit" value="Create"></td>
-    </tr>
-  </table>
+        <tr>
+          <td><label for="image-url">Image URL:</label></td>
+          <td><input type="text" name="image_url" id="image-url"></td>
+        </tr>
 
-</form>
+        <tr>
+          <td colspan="2" class="btn"><input type="submit" value="Create"></td>
+        </tr>
+      </table>
+    </form>
+
+    <form action="/add-supplier-uesp" method="post">
+      <table>
+        <tr>
+          <td colspan="2" class="title"><h2>Add From UESP</h2></td>
+        </tr>
+        <tr>
+          <td><label for="uesp-url">URL:</label></td>
+          <td><input type="text" name="uesp_url" id="uesp-url"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="btn"><input type="submit" value="Create"></td>
+        </tr>
+      </table>
+    </form>
+</div>
