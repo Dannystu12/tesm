@@ -111,7 +111,6 @@ textarea {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 20%;
-  height: 20%;
   margin:3%;
   padding-left:2%;
   padding-right:2%;
@@ -137,10 +136,21 @@ textarea {
 
 .card h2{
   font-size: 1.25em;
-  max-height: 2.5em;
+  height: 2.1em;
+  max-height: 2.1em;
   word-wrap: break-word;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.card p.desc{
+  font-size: 1em;
+  height: 3.6em;
+  max-height: 3.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: block;
 }
 
