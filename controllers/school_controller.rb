@@ -35,3 +35,10 @@ post '/delete-school/:id' do
   school.delete
   redirect "/schools"
 end
+
+post '/add-school-uesp' do
+  school_hash = UespScraper.scrape_school params["uesp_url"]
+  school = School.new school_hash
+  school.create
+  redirect "/schools"
+end
